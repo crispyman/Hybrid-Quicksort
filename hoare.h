@@ -8,12 +8,12 @@
 class hoare {
 private:
     void sortF(int *data, int first, int last, int (*v) (int*, int, int));
-        void swap(int &a, int &b);
+    void swap(int &a, int &b);
 public:
-        int Hoare(int* data, int first, int last);
+    int Hoare(int* data, int first, int last);
 
-        int MHoare(int* data, int first, int last);
-    };
+    int MHoare(int* data, int first, int last);
+};
 
 
 
