@@ -7,4 +7,8 @@ include_directories(.)
 
 add_executable(Hybrid_Quicksort
         hoare.cpp
-        hoare.h lomuto.cpp lomuto.h)
+        hoare.h
+        lomuto.cpp
+        lomuto.h
+        m5.cpp
+        m5.h)
