@@ -70,6 +70,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/Main.cpp">
+			<Option target="Hybrid_Quicksort"/>
+		</Unit>
+		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/Main.h">
+			<Option target="Hybrid_Quicksort"/>
+		</Unit>
 		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/hf.cpp">
 			<Option target="Hybrid_Quicksort"/>
 		</Unit>

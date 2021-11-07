@@ -129,6 +129,30 @@ Hybrid_Quicksort/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid_Quicksort.dir/build.make CMakeFiles/Hybrid_Quicksort.dir/build
 .PHONY : Hybrid_Quicksort/fast
 
+Main.o: Main.cpp.o
+.PHONY : Main.o
+
+# target to build an object file
+Main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid_Quicksort.dir/build.make CMakeFiles/Hybrid_Quicksort.dir/Main.cpp.o
+.PHONY : Main.cpp.o
+
+Main.i: Main.cpp.i
+.PHONY : Main.i
+
+# target to preprocess a source file
+Main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid_Quicksort.dir/build.make CMakeFiles/Hybrid_Quicksort.dir/Main.cpp.i
+.PHONY : Main.cpp.i
+
+Main.s: Main.cpp.s
+.PHONY : Main.s
+
+# target to generate assembly for a file
+Main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid_Quicksort.dir/build.make CMakeFiles/Hybrid_Quicksort.dir/Main.cpp.s
+.PHONY : Main.cpp.s
+
 hf.o: hf.cpp.o
 .PHONY : hf.o
 
@@ -258,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Hybrid_Quicksort"
+	@echo "... Main.o"
+	@echo "... Main.i"
+	@echo "... Main.s"
 	@echo "... hf.o"
 	@echo "... hf.i"
 	@echo "... hf.s"
