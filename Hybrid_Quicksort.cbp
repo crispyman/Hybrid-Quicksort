@@ -94,6 +94,12 @@
 		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/m5.h">
 			<Option target="Hybrid_Quicksort"/>
 		</Unit>
+		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/shell.cpp">
+			<Option target="Hybrid_Quicksort"/>
+		</Unit>
+		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/shell.h">
+			<Option target="Hybrid_Quicksort"/>
+		</Unit>
 		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -225,6 +225,30 @@ m5.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid_Quicksort.dir/build.make CMakeFiles/Hybrid_Quicksort.dir/m5.cpp.s
 .PHONY : m5.cpp.s
 
+shell.o: shell.cpp.o
+.PHONY : shell.o
+
+# target to build an object file
+shell.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid_Quicksort.dir/build.make CMakeFiles/Hybrid_Quicksort.dir/shell.cpp.o
+.PHONY : shell.cpp.o
+
+shell.i: shell.cpp.i
+.PHONY : shell.i
+
+# target to preprocess a source file
+shell.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid_Quicksort.dir/build.make CMakeFiles/Hybrid_Quicksort.dir/shell.cpp.i
+.PHONY : shell.cpp.i
+
+shell.s: shell.cpp.s
+.PHONY : shell.s
+
+# target to generate assembly for a file
+shell.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid_Quicksort.dir/build.make CMakeFiles/Hybrid_Quicksort.dir/shell.cpp.s
+.PHONY : shell.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -246,6 +270,9 @@ help:
 	@echo "... m5.o"
 	@echo "... m5.i"
 	@echo "... m5.s"
+	@echo "... shell.o"
+	@echo "... shell.i"
+	@echo "... shell.s"
 .PHONY : help
 
 

@@ -1,6 +1,6 @@
-#include "shellsort.h"
+#include "shell.h"
 
-void shell(int *data, int first, int
+void Shell(int *data, int first, int
 last) {
     
     const int k[]={1,7,19};
