@@ -7,10 +7,9 @@
 
 
 class m5 {
-private:
-    void swap(int &a, int &b);
 public:
-    int M5(int *data, int first, int last);
+    static void swap(int &a, int &b);
+    static int M5(int *data, int first, int last);
 };
 
 

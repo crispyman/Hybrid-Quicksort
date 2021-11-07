@@ -7,11 +7,10 @@
 
 
 class lomuto {
-private:
-    void swap(int &a, int &b);
 public:
-    int Lomuto(int *data, int first, int r);
-    int MLomuto(int *data, int first, int r);
+    static void swap(int &a, int &b);
+    static int Lomuto(int *data, int first, int r);
+    static int MLomuto(int *data, int first, int r);
 
 };
 

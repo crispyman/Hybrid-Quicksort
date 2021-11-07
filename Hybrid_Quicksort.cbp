@@ -70,10 +70,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/M5.cpp">
+		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/hf.cpp">
 			<Option target="Hybrid_Quicksort"/>
 		</Unit>
-		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/M5.h">
+		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/hf.h">
 			<Option target="Hybrid_Quicksort"/>
 		</Unit>
 		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/hoare.cpp">
@@ -86,6 +86,12 @@
 			<Option target="Hybrid_Quicksort"/>
 		</Unit>
 		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/lomuto.h">
+			<Option target="Hybrid_Quicksort"/>
+		</Unit>
+		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/m5.cpp">
+			<Option target="Hybrid_Quicksort"/>
+		</Unit>
+		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/m5.h">
 			<Option target="Hybrid_Quicksort"/>
 		</Unit>
 		<Unit filename="/home/andrewiii/CLionProjects/Hybrid-Quicksort/CMakeLists.txt">

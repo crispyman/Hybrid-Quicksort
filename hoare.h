@@ -6,13 +6,13 @@
 #define HYBRID_QUICKSORT_HOARE_H
 
 class hoare {
-private:
-    void sortF(int *data, int first, int last, int (*v) (int*, int, int));
-    void swap(int &a, int &b);
-public:
-    int Hoare(int* data, int first, int last);
 
-    int MHoare(int* data, int first, int last);
+public:
+    static void swap(int &a, int &b);
+    static void sortF(int *data, int first, int last, int (*v) (int*, int, int));
+    static int Hoare(int* data, int first, int last);
+    static int MHoare(int* data, int first, int last);
+
 };
 
 

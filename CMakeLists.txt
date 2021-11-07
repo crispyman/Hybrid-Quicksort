@@ -11,4 +11,4 @@ add_executable(Hybrid_Quicksort
         lomuto.cpp
         lomuto.h
         m5.cpp
-        m5.h)
+        m5.h hf.cpp hf.h)
