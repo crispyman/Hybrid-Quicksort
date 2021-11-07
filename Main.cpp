@@ -3,6 +3,7 @@
 //
 #include "Main.h"
 #include <stdlib.h>
+#include <iostream>
 
 void static swap(int &a, int &b) {
     int c = a;
@@ -81,7 +82,7 @@ int static MHoare(int* data, int first, int last) {
 }
 
 int static M5(int *data, int first, int last) {
-    if(data[first >= data[last]])
+    if(first >= last)
         return -1;
     int i = first;
     int j = last+1;
@@ -159,6 +160,16 @@ void static quick3(int *data, int left, int right) {
     quick3(data, last + 1, right);
 }
 
+bool static check_sorted(int *data, int length){
+    for (int i = 1; i < length; i++){
+        if (data[i] < data[i-1]){
+            return false;
+        }
+        else
+            return true;
+    }
+}
+
 
 int main(){
     int arraycount = 10000;
@@ -171,11 +182,34 @@ int main(){
 
     for(int i=6; i <= 32; i++){
         HF(array, 0, arraycount, M5, i);
+        std::cout << check_sorted(array, arraycount);
     }
+
+    std::cout << "\n";
+
+    srand(1000);
+    for (int i = 0; i < arraycount; i++){
+        array[i] = rand();
+    }
+
     for(int i = 6; i <= 32; i++){
         HF(array, 0, arraycount, Hoare, i);
+        std::cout << check_sorted(array, arraycount);
     }
+
+    std::cout << "\n";
+
+
+    srand(1000);
+    for (int i = 0; i < arraycount; i++){
+        array[i] = rand();
+    }
+
     for(int i=6; i<=32; i++){
         HF(array, 0, arraycount, MHoare, i);
+        std::cout << check_sorted(array, arraycount);
     }
+
+    std::cout << "\n";
+
 }
