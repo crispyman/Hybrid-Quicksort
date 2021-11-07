@@ -15,4 +15,4 @@ add_executable(Hybrid_Quicksort
         hf.cpp
         hf.h
         shell.cpp
-        shell.h Main.cpp Main.h)
+        shell.h Main.cpp Main.h quick3.cpp quick3.h)

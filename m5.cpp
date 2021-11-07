@@ -36,6 +36,7 @@ int m5::M5(int *data, int first, int last) {
 }
 
 void m5::swap(int &a, int &b) {
-    int c=a;
-    a=b;
-    b=c;
+    int c = a;
+    a = b;
+    b = c;
+}
