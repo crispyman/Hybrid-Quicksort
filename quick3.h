@@ -9,7 +9,7 @@
 class quick3 {
 public:
     static void swap(int &a, int &b);
-    static int quick3(int *data, int left, int right);
+    static int Q3(int *data, int left, int right);
 };
 
 
