@@ -6,13 +6,4 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(Hybrid_Quicksort
-        hoare.cpp
-        hoare.h
-        lomuto.cpp
-        lomuto.h
-        m5.cpp
-        m5.h
-        hf.cpp
-        hf.h
-        shell.cpp
-        shell.h Main.cpp Main.h quick3.cpp quick3.h)
+        Main.cpp Main.h)
