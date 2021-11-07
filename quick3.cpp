@@ -4,7 +4,7 @@
 
 #include "quick3.h"
 
-int quick3::quick3(int *data, int left, int right) {
+int quick3::Q3(int *data, int left, int right) {
     if(left >= right) return;
     int li = left;
     int last = right;
