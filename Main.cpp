@@ -188,13 +188,15 @@ int main(){
         array[i] = rand();
     }
 
+
+
     std::cout << "\n" << "M5: ";
 
     for(int i=cutoffStart; i <= cutoffEnd; i++){
-
+        int tempI = i;
         std::copy(array, array + arraycount , arraycopy);
         auto start = std::chrono::high_resolution_clock::now();
-        HF(array, 0, arraycount, M5, i);
+        HF(array, 0, arraycount, M5, tempI);
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
         std::cout << duration.count() << ", ";
@@ -205,9 +207,10 @@ int main(){
 
 
     for(int i = cutoffStart; i <= cutoffEnd; i++){
+        int tempI = i;
         std::copy(array, array + arraycount , arraycopy);
         auto start = std::chrono::high_resolution_clock::now();
-        HF(array, 0, arraycount, Hoare, i);
+        HF(array, 0, arraycount, Hoare, tempI);
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
         std::cout << duration.count() << ", ";
@@ -219,9 +222,10 @@ int main(){
 
 
     for(int i=cutoffStart; i<=cutoffEnd; i++){
+        int tempI = i;
         std::copy(array, array + arraycount , arraycopy);
         auto start = std::chrono::high_resolution_clock::now();
-        HF(array, 0, arraycount, MHoare, i);
+        HF(array, 0, arraycount, MHoare, tempI);
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
         std::cout << duration.count() << ", ";
@@ -230,9 +234,10 @@ int main(){
     std::cout << "\n" << "Lomuto: ";
 
     for(int i=cutoffStart; i<=cutoffEnd; i++){
+        int tempI = i; // Needed because MLomuto modifies i
         std::copy(array, array + arraycount , arraycopy);
         auto start = std::chrono::high_resolution_clock::now();
-        HF(array, 0, arraycount, Lomuto, i);
+        HF(array, 0, arraycount, Lomuto, tempI);
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
         std::cout << duration.count() << ", ";
