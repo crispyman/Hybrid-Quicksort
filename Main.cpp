@@ -180,21 +180,23 @@ int main(){
     int arraycopy[arraycount];
 
     srand(1000);
-    int cutoffStart = 6;
-    int cutoffEnd = 32;
+    const int cutoffStart = 6;
+    const int cutoffEnd = 32;
     int numberOfCutoffs = cutoffEnd - cutoffStart;
 
     for (int i = 0; i < arraycount; i++){
         array[i] = rand();
     }
 
+
+
     std::cout << "\n" << "M5: ";
 
-    for(int i=cutoffStart; i <= cutoffEnd; i++){
-
+    for(volatile int i=cutoffStart; i <= cutoffEnd; i++){
+        int tempI = i;
         std::copy(array, array + arraycount , arraycopy);
         auto start = std::chrono::high_resolution_clock::now();
-        HF(array, 0, arraycount, M5, i);
+        HF(array, 0, arraycount, M5, tempI);
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
         std::cout << duration.count() << ", ";
@@ -204,10 +206,11 @@ int main(){
 
 
 
-    for(int i = cutoffStart; i <= cutoffEnd; i++){
+    for(volatile int i = cutoffStart; i <= cutoffEnd; i++){
+        int tempI = i;
         std::copy(array, array + arraycount , arraycopy);
         auto start = std::chrono::high_resolution_clock::now();
-        HF(array, 0, arraycount, Hoare, i);
+        HF(array, 0, arraycount, Hoare, tempI);
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
         std::cout << duration.count() << ", ";
@@ -218,10 +221,11 @@ int main(){
 
 
 
-    for(int i=cutoffStart; i<=cutoffEnd; i++){
+    for(volatile int i=cutoffStart; i<=cutoffEnd; i++){
+        int tempI = i;
         std::copy(array, array + arraycount , arraycopy);
         auto start = std::chrono::high_resolution_clock::now();
-        HF(array, 0, arraycount, MHoare, i);
+        HF(array, 0, arraycount, MHoare, tempI);
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
         std::cout << duration.count() << ", ";
@@ -229,22 +233,37 @@ int main(){
 
     std::cout << "\n" << "Lomuto: ";
 
-    for(int i=cutoffStart; i<=cutoffEnd; i++){
+    for(volatile int i=cutoffStart; i<=cutoffEnd; i++){
+        int tempI = i; // Needed because MLomuto modifies i
         std::copy(array, array + arraycount , arraycopy);
         auto start = std::chrono::high_resolution_clock::now();
-        HF(array, 0, arraycount, Lomuto, i);
+        HF(array, 0, arraycount, Lomuto, tempI);
+        auto stop = std::chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+        std::cout <<  duration.count() << ", ";
+        //std::cerr << i << " ";
+    }
+
+    std::cout << "\n" << "MLomuto: ";
+
+    for(volatile int i=cutoffStart; i<=cutoffEnd; i++){
+        int tempI = i; // Needed because MLomuto modifies i
+        std::copy(array, array + arraycount , arraycopy);
+        auto start = std::chrono::high_resolution_clock::now();
+        HF(array, 0, arraycount, MLomuto, tempI);
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
         std::cout << duration.count() << ", ";
     }
 
-    std::cout << "\n" << "MLomuto: ";
+    std::cout << "\nShell: ";
 
-    for(int i=cutoffStart; i<=cutoffEnd; i++){
+
+    for(volatile int i=cutoffStart; i<=cutoffEnd; i++){
         int tempI = i; // Needed because MLomuto modifies i
         std::copy(array, array + arraycount , arraycopy);
         auto start = std::chrono::high_resolution_clock::now();
-        HF(array, 0, arraycount, MLomuto, tempI);
+        HF(array, 0, arraycount, Shell, tempI);
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
         std::cout << duration.count() << ", ";
