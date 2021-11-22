@@ -4,7 +4,9 @@
 #include "Main.h"
 #include <stdlib.h>
 #include <iostream>
+#include <chrono>
 
+using namespace std;
 void static swap(int &a, int &b) {
     int c = a;
     a = b;
@@ -168,46 +170,84 @@ bool static check_sorted(int *data, int length){
         else
             return true;
     }
+    return true;
 }
 
 
 int main(){
     int arraycount = 10000;
     int array[arraycount];
+    int arraycopy[arraycount];
+
     srand(1000);
+    int cutoffStart = 6;
+    int cutoffEnd = 32;
+    int numberOfCutoffs = cutoffEnd - cutoffStart;
+
     for (int i = 0; i < arraycount; i++){
         array[i] = rand();
     }
 
+    std::cout << "\n" << "M5: ";
 
-    for(int i=6; i <= 32; i++){
+    for(int i=cutoffStart; i <= cutoffEnd; i++){
+
+        std::copy(array, array + arraycount , arraycopy);
+        auto start = std::chrono::high_resolution_clock::now();
         HF(array, 0, arraycount, M5, i);
-        std::cout << check_sorted(array, arraycount);
+        auto stop = std::chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+        std::cout << duration.count() << ", ";
     }
 
-    std::cout << "\n";
+    std::cout << "\n" << "Hoare: ";
 
-    srand(1000);
-    for (int i = 0; i < arraycount; i++){
-        array[i] = rand();
-    }
 
-    for(int i = 6; i <= 32; i++){
+
+    for(int i = cutoffStart; i <= cutoffEnd; i++){
+        std::copy(array, array + arraycount , arraycopy);
+        auto start = std::chrono::high_resolution_clock::now();
         HF(array, 0, arraycount, Hoare, i);
-        std::cout << check_sorted(array, arraycount);
+        auto stop = std::chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+        std::cout << duration.count() << ", ";
     }
 
-    std::cout << "\n";
+    std::cout << "\n" << "MHoare: ";
 
 
-    srand(1000);
-    for (int i = 0; i < arraycount; i++){
-        array[i] = rand();
-    }
 
-    for(int i=6; i<=32; i++){
+
+    for(int i=cutoffStart; i<=cutoffEnd; i++){
+        std::copy(array, array + arraycount , arraycopy);
+        auto start = std::chrono::high_resolution_clock::now();
         HF(array, 0, arraycount, MHoare, i);
-        std::cout << check_sorted(array, arraycount);
+        auto stop = std::chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+        std::cout << duration.count() << ", ";
+    }
+
+    std::cout << "\n" << "Lomuto: ";
+
+    for(int i=cutoffStart; i<=cutoffEnd; i++){
+        std::copy(array, array + arraycount , arraycopy);
+        auto start = std::chrono::high_resolution_clock::now();
+        HF(array, 0, arraycount, Lomuto, i);
+        auto stop = std::chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+        std::cout << duration.count() << ", ";
+    }
+
+    std::cout << "\n" << "MLomuto: ";
+
+    for(int i=cutoffStart; i<=cutoffEnd; i++){
+        int tempI = i; // Needed because MLomuto modifies i
+        std::copy(array, array + arraycount , arraycopy);
+        auto start = std::chrono::high_resolution_clock::now();
+        HF(array, 0, arraycount, MLomuto, tempI);
+        auto stop = std::chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+        std::cout << duration.count() << ", ";
     }
 
     std::cout << "\n";
