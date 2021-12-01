@@ -3,6 +3,8 @@ project(Hybrid_Quicksort)
 
 set(CMAKE_CXX_STANDARD 14)
 
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --Wl, --stack,116777216")
+
 include_directories(.)
 
 add_executable(Hybrid_Quicksort
