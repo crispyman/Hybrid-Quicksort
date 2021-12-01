@@ -1,5 +1,5 @@
 //
-// Created by andrewiii on 11/7/21.
+// Created by Andrew Pobrica on 11/7/21.
 //
 
 #ifndef HYBRID_QUICKSORT_MAIN_H
