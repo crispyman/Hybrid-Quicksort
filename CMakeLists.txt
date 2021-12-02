@@ -8,4 +8,4 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --Wl, --stack,116777216")
 include_directories(.)
 
 add_executable(Hybrid_Quicksort
-        Main.cpp Main.h)
+        Main.cpp Main.h sort.h)
