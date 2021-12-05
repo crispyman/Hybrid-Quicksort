@@ -1,4 +1,6 @@
 # Hybrid-Quicksort
+![build status](https://github.com/crispyman/Hybrid-Quicksort/actions/workflows/cmake.yml/badge.svg)
+
 Source Paper for most algorithms
 https://www.researchgate.net/publication/305229647_HYBRID_QUICKSORT_AN_EMPIRICAL_STUDY
 
