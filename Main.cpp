@@ -200,7 +200,7 @@ int compareUnique(){
     const int numberOfCutoffs = cutoffEnd - cutoffStart;
 
     for (int i = 0; i < arraycount; i++){
-        array[i] = i;
+        array[i] = i % 1000;
     }
 
 
@@ -332,8 +332,12 @@ int comparesizes(){
     file << "\n" <<  arraycount;
 
     for (int i = 0; i < arraycount; i++){
-        array[i] = i;
+        array[i] = i % 1000;
     }
+
+    //for (int i = 0; i < arraycount; i++){
+    //    array[i] = i;
+    //}
 
 
     std::shuffle(array, array + arraycount, std::default_random_engine(1000));
@@ -471,7 +475,8 @@ int comparesizes(){
 }
 
 int main(){
-    compareUnique();
+    comparesizes();
+    // compareUnique();
 
 
     return 0;
