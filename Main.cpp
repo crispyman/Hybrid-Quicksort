@@ -2,11 +2,9 @@
 // Created by Andrew Pobrica on 11/7/21.
 //
 #include "Main.h"
-#include <stdlib.h>
 #include <iostream>
 #include <chrono>
 #include<fstream>
-#include <string.h>
 #include <algorithm>
 #include <random>
 
@@ -19,14 +17,14 @@
 #include "sort.h"
 
 
-void static swap(int &a, int &b) {
+void Main::swap(int &a, int &b) {
     int c = a;
     a = b;
     b = c;
 }
 
 
-void static sortF(int *data, int first, int last, int (*v) (int*, int, int)) {
+void Main::sortF(int *data, int first, int last, int (*v) (int*, int, int)) {
     if(first < last){
         int pv = v(data, first, last);
         sortF(data, first, pv-1, v);
@@ -34,7 +32,7 @@ void static sortF(int *data, int first, int last, int (*v) (int*, int, int)) {
     }
 }
 
-int static Lomuto(int *data, int first, int r){
+int Main::Lomuto(int *data, int first, int r){
     int pivot = data[r];
     int i = first -1;
     for (int j = first; j < r; j++)
@@ -44,7 +42,7 @@ int static Lomuto(int *data, int first, int r){
     return i;
 }
 
-int static MLomuto(int* data, int first, int last){
+int Main::MLomuto(int* data, int first, int last){
     int x = data[first];
     int i = first;
     int j = last;
@@ -58,7 +56,7 @@ int static MLomuto(int* data, int first, int last){
     return i;
 }
 
-int static Hoare(int* data, int first, int last) {
+int Main::Hoare(int* data, int first, int last) {
     if (first < last) {
         int pivot = data[first];
         int i = first;
@@ -76,7 +74,7 @@ int static Hoare(int* data, int first, int last) {
     return -1;
 }
 
-int static MHoare(int* data, int first, int last) {
+int Main::MHoare(int* data, int first, int last) {
     if (data[first] > data[last])
         swap(data[first], data[last]);
     int pivot = data[first];
@@ -95,7 +93,7 @@ int static MHoare(int* data, int first, int last) {
     }
 }
 
-int static M5(int *data, int first, int last) {
+int  Main::M5(int *data, int first, int last) {
     if(first >= last)
         return -1;
     int i = first;
@@ -126,7 +124,7 @@ int static M5(int *data, int first, int last) {
     return j;
 }
 
-void static Shell(int *data, int first, int last) {
+void Main::Shell(int *data, int first, int last) {
 
     const int k[]={1,7,19};
     int l=0, range=last-first;
@@ -146,7 +144,7 @@ void static Shell(int *data, int first, int last) {
     }
 }
 
-void static HF(int *data, int first, int last, int (*v) (int*,int,int), int cutoff) {
+void Main::HF(int *data, int first, int last, int (*v) (int*,int,int), int cutoff) {
     if (first < last) {
         if (last - first <= cutoff) {
             Shell(data, first, last);
@@ -158,7 +156,7 @@ void static HF(int *data, int first, int last, int (*v) (int*,int,int), int cuto
     }
 }
 
-void static quick3(int *data, int left, int right) {
+void Main::quick3(int *data, int left, int right) {
     if(left >= right)
         return;
     int li = left;
@@ -174,7 +172,7 @@ void static quick3(int *data, int left, int right) {
     quick3(data, last + 1, right);
 }
 
-bool static check_sorted(int *data, int length){
+bool Main::check_sorted(int *data, int length){
     for (int i = 1; i < length; i++){
         if (data[i] < data[i-1]){
             return false;
@@ -186,7 +184,7 @@ bool static check_sorted(int *data, int length){
 }
 
 
-int compareUnique(){
+int Main::compareUnique(){
     std::ofstream file;
     file.open("times.csv");
 
@@ -319,20 +317,23 @@ int compareUnique(){
 }
 
 
-int comparesizes(){
+int Main::comparesizes(){
 
     std::ofstream file;
     file.open("sizes.csv", std::ios_base::app);
 
-    const int arraycount = 1000000;
+    const int arraycount = 300000;
     int array[arraycount];
     int arraycopy[arraycount];
     double average;
 
     file << "\n" <<  arraycount;
 
-    for (int i = 0; i < arraycount; i++){
-        array[i] = i % 1000;
+    for (int i = 0; i < 300; i++){
+        array[i] = rand() % 300000;
+    }
+    for (int i = 1000; i < arraycount; i++){
+        array[i] = i;
     }
 
     //for (int i = 0; i < arraycount; i++){
@@ -475,8 +476,8 @@ int comparesizes(){
 }
 
 int main(){
-    comparesizes();
-    // compareUnique();
+    Main::comparesizes();
+    // Main::compareUnique();
 
 
     return 0;

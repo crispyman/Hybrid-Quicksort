@@ -16,11 +16,12 @@ public:
     static int Lomuto(int *data, int first, int r);
     static int MLomuto(int *data, int first, int r);
     static int M5(int *data, int first, int last);
-    static void Q3(int *data, int left, int right);
+    static void quick3(int *data, int left, int right);
     static void Shell(int *data, int first, int last);
-
-
-    int main();
+    static bool check_sorted(int *data, int length);
+    static int compareUnique();
+    static int comparesizes();
+    //int main();
 };
 
 
